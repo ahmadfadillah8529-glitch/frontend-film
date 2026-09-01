@@ -16,7 +16,7 @@
 
       <div class="form-group">
         <label>🎭 Genre <span class="required">*</span></label>
-        <select v-model="form.id_genre" required>
+        <select v-model="form.genre_id" required>
           <option value="">-- Pilih Genre --</option>
           <!-- v-for untuk mengisi dropdown dari data API -->
           <option v-for="genre in genres" :key="genre.id" :value="genre.id">
@@ -38,6 +38,11 @@
         <div class="form-group">
           <label>⏱️ Durasi (menit) <span class="required">*</span></label>
           <input v-model="form.durasi" type="number" placeholder="120" min="1" required />
+        </div>
+        <div class="form-group">
+          <label for="rating">Rating Film <span class="required">*</span></label>
+          <input id="rating" v-model="form.rating" type="text"
+            placeholder="Contoh: 5.7" required />
         </div>
       </div>
 
@@ -90,13 +95,14 @@ const aktors     = ref([])
 
 // reactive() untuk form dengan banyak field
 const form = reactive({
-  title:         '',
-  id_genre:      '',
+  judul:         '',
+  genre_id:      '',
   sutradara:     '',
-  tanggal_rilis: '',
+  tahun_rilis: '',
   durasi:        '',
   poster:        '',
-  deskripsi:     '',
+  desc:     '',
+  rating:     '',
   id_aktor:      [],   // Array karena bisa pilih BANYAK aktor
 })
 
@@ -140,7 +146,7 @@ const handleSubmit = async () => {
     Object.assign(form, {
       title: '', id_genre: '', sutradara: '',
       tanggal_rilis: '', durasi: '', poster: '',
-      deskripsi: '', id_aktor: []
+      deskripsi: '',rating:     '', id_aktor: []
     })
     window.scrollTo({ top: 0, behavior: 'smooth' })
 

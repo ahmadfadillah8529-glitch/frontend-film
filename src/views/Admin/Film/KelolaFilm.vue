@@ -91,8 +91,8 @@ const ambilFilm = async () => {
 }
 
 // Tampilkan modal konfirmasi sebelum hapus
-const hapusFilm = (id, title) => {
-  filmToDelete.value = { id, title }
+const hapusFilm = (id, judul) => {
+  filmToDelete.value = { id, judul }
   showModal.value    = true
 }
 

@@ -91,9 +91,9 @@ const genres        = ref([])
 const aktors        = ref([])
 
 const form = reactive({
-  title: '', id_genre: '', sutradara: '',
-  tanggal_rilis: '', durasi: '', poster: '',
-  deskripsi: '', id_aktor: [],
+  judul: '', genre_id: '', sutradara: '',
+  tahun_rilis: '', durasi: '', poster: '',
+  desc: '', id_aktor: [],
 })
 
 onMounted(async () => {
